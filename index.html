@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Roberto Burgos">
+    <meta name="keywords" content="todo list JS HTML CSS">
+    <link rel="stylesheet"  href="./css/estilo.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.1.96/css/materialdesignicons.min.css">
+    
+    <title>Lista de Tarefas</title>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>    
+    <header>
+        <input type="text" placeholder="Digite sua tarefa" id="inputTarefa">
+        <button id="btnAdd" onclick="addTarefa()" class="add">Adicionar</button>
+        
+    </header>
+    <main id ="areaLista">
+        <!-- <div class="item">
+            <div class="item-icone">
+                <i class="mdi mdi-circle-outline"></i>
+            </div>
+            <div class="item-nome">
+                Teste de tarefa
+            </div>
+            <div class="item-botao">
+                <button class="delete"><i class="mdi mdi-delete"></i>Deletar</button>
+            </div>                    
+        </div> -->
+
+        <!-- <div class="item clicado">
+            <div class="item-icone">
+                <i class="mdi mdi-check-circle"></i>
+            </div>
+            <div class="item-nome">
+                Teste de tarefa
+            </div>
+            <div class="item-botao">
+                <button class="delete" onclick="deletar()"><i class="mdi mdi-delete"></i>Deletar</button>
+            </div>                    
+        </div> -->
+    </main>
+
+    <script src="./js/controle.js"></script>    
+</body>
+</html>

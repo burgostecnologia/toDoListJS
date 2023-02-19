@@ -1,0 +1,136 @@
+#PASSO 1 - SOMENTE Quando for criar um projeto novo na maquina local
+
+Entrar no explorador de arquivos e acessar a pasta criada do projeto e abrir o git bash nesta pasta
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git init 
+
+*Será criado a pasta .git como repositorio local para gerenciar as versões
+
+#PASSO 2 - Caso queira mudar o nome da Branch
+
+Somente se precisar mudar a Branch
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git branch -M "develop" 
+
+*Será alterada a branch
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (develop)
+
+#PASSO 3 - Preparar para salvar a alteração no git (Local)
+
+Preparar arquivos que serão salvos
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git add .
+
+* Adicona todos os arquivos modificados na area de Staging(aguardando commit para salvar local)
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git status
+
+* Informa todos os arquivos que estão na área de Staging aguardando o Commit (Salvar Local)
+
+Somente se precisar tirar arquivos indevidos do Staging 
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git restore --staged .
+
+
+#PASSO 4 - Salvar a alteração no git (Local)
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git commit -m "Primeiro Commit"
+
+* Salva as alterações no git (Local)
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git status
+
+* Os arquivos vão sumir do Staging
+
+#PASSO 5 - Preparar conexão com o repositório no Github ou Bitbucket (nuvem) - Somente na primeira vez
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git remote add origin https://burgostecnologia@bitbucket.org/burgostecnologia/starter-project-vue-java-spring-boot.git
+
+*Vai abrir a tela de login e senha do repositorio no github ou bitbucket (no caso do bitbucket lembrar de acessar o seu profile/personal settings/app passwords e criar uma senha marcando todos os checks de permissão)
+
+
+#PASSO 6 - subir arquivos para o repositório no Github ou Bitbucket (nuvem)
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git push -u origin master
+
+
+#PASSOS COMPLEMENTARES 1 - criar e mudar branchs
+
+Criar uma branch local e mudar para ela (Local)
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git checkout -b feature-nova-msg
+
+* Checkout sai da branch atual e depois e criada a outra branch
+* Caso anteriormente ja tenha criado uma nova branch para mudar de uma para não precisa do "-b"
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (feature-nova-msg)
+
+#PASSOS COMPLEMENTARES 2 - remover um remote
+
+Caso necessário remover um remote
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git remote remove origin
+
+
+#PASSOS COMPLEMENTARES 3 - SE PRECISAR FAZER MERGE (faz local a junção)
+
+1 - Mudar a branch da alteração para a Master
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (feature-nova-msg)
+$ git checkout master
+
+2 - comando de junção 
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git merge feature-nova-msg
+
+3 - push
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/starter-java-spring-boot-vue (master)
+$ git push origin master
+
+
+#PASSOS COMPLEMENTARES 4 - Clonar projetos e atualizar projetos na maquina com o que esta mais atualizado no repositorio(bitbucket ou github)
+
+1 - criar uma pasta e clonar
+
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/projeto-copiado (master)
+$ git clone https://burgostecnologia@bitbucket.org/burgostecnologia/starter-java-spring-boot-vue.git
+
+2 - caso queira atualizar o conteudo local com o que pode estar mais atualizado no repositorio da nuvem
+ROBERTO@MAQUINA MINGW64 /c/BURGOS/projeto-copiado (master)
+$ git pull
+
+*precisa fechar e abrir o vscode para atualizar
+
+
+#PASSOS COMPLEMENTARES 5 - Trabalhando em projeto de outros com fazendo Fork - enviando pull request
+
+1- Diferente do Clone se fizer o fork de um projeto pelo bitbucket ou github o projeto vai direto para o seu repositorio identificando o dono
+
+2 - se fizer o commit altera no seu repositorio (bitbucket/ github) mas nao do dono
+
+3 -  vc pode enviar um pull request ("Avisando se o dono quer fazer o pull para maquina dele aceitando essa sua melhoria")
+   -> Contribute -> Open Pull request ->  colocar comentario -> Create pull request
+
+
+#PASSOS COMPLEMENTARES 6 - Recebendo pull request
+
+1 - no meu epositorio (bitbucket/ github) olhar link Pull requestes (alteracao de pessoas que estao enviando melhorias)
+
+2 - Se quiser -> Clicar em merge pull request
+
+3 - Se nao quiser colocar msg e clicar no ->  Close pull request
+
+->> FIM
